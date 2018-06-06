@@ -159,18 +159,8 @@ public class Object {
      * @see     java.util.HashMap
      */
     public boolean equals(Object obj) {
-        return (this == obj) || equalsWithStubCheck(obj);
+        return (this == obj);
     }
-
-    /*
-     * Added by Niel: checks if this object or the reference object is a stub,
-     * and if so, compares the addresses of the underlying real object(s).
-     *
-     * Required for equals() to work correctly when swap-on-demand is enabled,
-     * since a reference to an object's stub should be considered equal to a
-     * reference to the object itself.
-     */
-    private native boolean equalsWithStubCheck(Object obj);
 
     /**
      * Creates and returns a copy of this object.  The precise meaning
